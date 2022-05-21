@@ -28,16 +28,16 @@ public class Main {
                     edad = parseInt(linea[2]);
                     Persona p = new Persona(name, city, edad);
                     personas.add(p);
-                    System.out.println("Nombre: "+p.getName()+". Poblacion: "+p.getCity()+". Edad: "+p.getAge());
+                    System.out.println("Nombre: "+p.name()+". Poblacion: "+p.city()+". Edad: "+p.edad());
                 }else{
                     edad=-1;
                     Persona p = new Persona(name, city, edad);
                     personas.add(p);
-                    System.out.println("Nombre: "+p.getName()+". Poblacion: "+p.getCity()+". Edad: Desconocido");
+                    System.out.println("Nombre: "+p.name()+". Poblacion: "+p.city()+". Edad: Desconocido");
                 }
             }
             System.out.println("\nMenores de 25 años:");
-            personas.stream().filter(e -> e.getAge() <25 && e.getAge()>0).forEach(e-> System.out.println("Nombre: "+e.getName()));
+            personas.stream().filter(e -> e.edad() <25 && e.edad()>0).forEach(e-> System.out.println("Nombre: "+e.name()));
 
         } catch (FileNotFoundException e){
             System.out.println("Error: Fichero no disponible");
